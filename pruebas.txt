@@ -1,0 +1,11 @@
+test_errores (__main__.Proyecto.test_errores) ... ok
+test_filtros (__main__.Proyecto.test_filtros) ... ok
+test_juego (__main__.Proyecto.test_juego) ... ok
+test_jugadores (__main__.Proyecto.test_jugadores) ... ok
+test_partidos (__main__.Proyecto.test_partidos) ... ok
+test_sintaxis (__main__.Proyecto.test_sintaxis) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.375s
+
+OK
