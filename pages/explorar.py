@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.express as px
-from utils.comun import iniciar,partidos
+from src.comun import iniciar,partidos
 iniciar('Explorar')
 d=partidos(); st.write('Consulta y analiza partidos históricos de la NBA.')
 a,b,c=st.columns(3)

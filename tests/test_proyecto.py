@@ -3,13 +3,13 @@ from pathlib import Path
 import pandas as pd
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from utils.juego import generar,NIVELES
+from src.juego import generar,NIVELES
 class Proyecto(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.p=pd.read_csv(ROOT/'data/datos.csv'); cls.j=pd.read_csv(ROOT/'data/jugadores.csv')
     def test_sintaxis(self):
-        for f in [ROOT/'Inicio.py',* (ROOT/'pages').glob('*.py'),*(ROOT/'utils').glob('*.py')]: ast.parse(f.read_text())
+        for f in [ROOT/'app.py',* (ROOT/'pages').glob('*.py'),*(ROOT/'src').glob('*.py')]: ast.parse(f.read_text(encoding="utf-8"))
     def test_partidos(self):
         p=self.p; self.assertGreater(len(p),1000); self.assertTrue(p.id_partido.is_unique); self.assertFalse(p.isna().any().any()); self.assertTrue((p.puntos_totales==p.puntos_local+p.puntos_visitante).all()); self.assertTrue((p.ganador==p.local.where(p.puntos_local>p.puntos_visitante,p.visitante)).all())
     def test_jugadores(self):

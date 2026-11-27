@@ -1,7 +1,7 @@
 from datetime import datetime
 import streamlit as st
-from utils.comun import iniciar,jugadores
-from utils.juego import generar,NIVELES
+from src.comun import iniciar,jugadores
+from src.juego import generar,NIVELES
 iniciar('Jugar'); st.header('Adivina el jugador')
 st.write('Identifica al jugador a partir de una actuación real. Elige una opción y confirma. No hay límite de tiempo.')
 nivel=st.selectbox('Dificultad',list(NIVELES)); n,k,p=NIVELES[nivel]; st.caption(f'{n} preguntas · {k} pistas · {p} puntos por acierto')
